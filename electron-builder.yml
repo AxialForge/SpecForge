@@ -1,0 +1,34 @@
+appId: com.axialforge.specforge
+productName: SpecForge
+copyright: Copyright © 2026 AxialForge
+
+directories:
+  output: dist
+  buildResources: assets
+
+files:
+  - src/**/*
+  - assets/icon.png
+  - package.json
+
+publish:
+  provider: github
+  owner: AxialForge
+  repo: SpecForge
+
+win:
+  target:
+    - nsis
+  icon: assets/icon.ico
+  artifactName: ${name}-${version}-setup.${ext}
+
+nsis:
+  # One-click, per-user install: no wizard, no UAC, and the silent updater can
+  # replace the app without ever showing a dialog (see src/main/updater.js).
+  oneClick: true
+  perMachine: false
+  allowToChangeInstallationDirectory: false
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: SpecForge
+  artifactName: ${name}-${version}-setup.${ext}

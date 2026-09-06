@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'" />
+  <title>SpecForge</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-theme="dark">
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <symbol id="i-dash" viewBox="0 0 24 24"><path d="M3 13h8V3H3zm0 8h8v-6H3zm10 0h8V11h-8zm0-18v6h8V3z"/></symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24"><path d="M9 3v2H7a2 2 0 0 0-2 2v2H3v2h2v2H3v2h2v2a2 2 0 0 0 2 2h2v2h2v-2h2v2h2v-2h2a2 2 0 0 0 2-2v-2h2v-2h-2v-2h2V9h-2V7a2 2 0 0 0-2-2h-2V3h-2v2h-2V3zm-2 4h10v10H7zm2 2v6h6V9z"/></symbol>
+      <symbol id="i-apps" viewBox="0 0 24 24"><path d="M4 4h6v6H4zm10 0h6v6h-6zM4 14h6v6H4zm10 0h6v6h-6z"/></symbol>
+      <symbol id="i-live" viewBox="0 0 24 24"><path d="M3 13h3l2-6 4 12 3-9 2 3h4v-2h-3l-3-4-3 9-4-12-3 7H3z"/></symbol>
+      <symbol id="i-bench" viewBox="0 0 24 24"><path d="M12 4a9 9 0 0 0-9 9c0 2.4.9 4.5 2.4 6.1l1.4-1.4A7 7 0 1 1 19 13h2a9 9 0 0 0-9-9zm-1 9a1 1 0 1 0 2 0l3.5-5.5L11 12a1 1 0 0 0 0 1z"/></symbol>
+      <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 3l5 5h-3v6h-4V8H7zm-7 13h2v3h14v-3h2v5H5z"/></symbol>
+      <symbol id="i-history" viewBox="0 0 24 24"><path d="M13 3a9 9 0 0 0-9 9H1l3.9 3.9L9 12H6a7 7 0 1 1 2.1 5l-1.4 1.4A9 9 0 1 0 13 3zm-1 5v5l4.3 2.5.7-1.2-3.5-2.1V8z"/></symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24"><path d="M19.4 13a7.5 7.5 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.6 7.6 0 0 0-1.7-1L15 3H9l-.4 2.7a7.6 7.6 0 0 0-1.7 1l-2.5-1-2 3.5L4.6 11a7.5 7.5 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1a7.6 7.6 0 0 0 1.7 1L9 21h6l.4-2.7a7.6 7.6 0 0 0 1.7-1l2.5 1 2-3.5zM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></symbol>
+      <symbol id="i-about" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 4h5v2H6v3H4zm11 0h5v5h-2V6h-3zM4 15h2v3h3v2H4zm14 0h2v5h-5v-2h3zM3 11h18v2H3z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><path d="M8 2h11a2 2 0 0 1 2 2v13h-2V4H8zM4 6h11a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm0 2v12h11V8z"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="../../assets/icon.png" alt="" class="brand-icon" />
+        <div><div class="brand-name">SpecForge</div><div class="brand-sub">by AxialForge</div></div>
+      </div>
+      <nav class="nav">
+        <button class="nav-item active" data-page="dashboard"><svg><use href="#i-dash"/></svg>Dashboard</button>
+        <button class="nav-item" data-page="hardware"><svg><use href="#i-cpu"/></svg>Hardware</button>
+        <button class="nav-item" data-page="software"><svg><use href="#i-apps"/></svg>Software</button>
+        <button class="nav-item" data-page="live"><svg><use href="#i-live"/></svg>Live monitor</button>
+        <button class="nav-item" data-page="bench"><svg><use href="#i-bench"/></svg>Benchmark</button>
+        <button class="nav-item" data-page="export"><svg><use href="#i-export"/></svg>Export</button>
+        <button class="nav-item" data-page="history"><svg><use href="#i-history"/></svg>History</button>
+        <div class="nav-spacer"></div>
+        <button class="nav-item" data-page="settings"><svg><use href="#i-settings"/></svg>Settings</button>
+        <button class="nav-item" data-page="about"><svg><use href="#i-about"/></svg>About</button>
+      </nav>
+      <div class="sidebar-foot">
+        <span id="foot-version">v0.0.0</span>
+        <span id="foot-update" class="pill hidden"></span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <h1 id="page-title">Dashboard</h1>
+        <div class="topbar-actions">
+          <button id="admin-btn" class="btn btn-warn hidden" title="Some fields (drive health, TPM, Secure Boot) need administrator rights"><svg><use href="#i-shield"/></svg>Relaunch as admin</button>
+          <button id="scan-btn" class="btn btn-primary"><svg><use href="#i-scan"/></svg><span>Scan this PC</span></button>
+        </div>
+      </header>
+
+      <div id="scan-progress" class="progress hidden"><div class="progress-bar"><div id="scan-bar" style="width:0%"></div></div><div id="scan-label" class="progress-label">Starting…</div></div>
+
+      <!-- ── Dashboard ───────────────────────────────── -->
+      <section class="page active" id="page-dashboard">
+        <div id="dash-empty" class="empty">
+          <img src="../../assets/icon.png" alt="" />
+          <h2>Let's see what this machine is made of.</h2>
+          <p>SpecForge reads the hardware and software of this PC and turns it into a clean spec sheet you can export for an eBay or marketplace listing, hand to an AI to write the listing for you, or file away as an audit.</p>
+          <button class="btn btn-primary btn-lg" data-action="scan"><svg><use href="#i-scan"/></svg>Scan this PC</button>
+        </div>
+        <div id="dash-content" class="hidden">
+          <div class="hero-grid" id="hero-grid"></div>
+          <div class="dash-row">
+            <div class="card">
+              <div class="card-head"><h3>Quick actions</h3></div>
+              <div class="actions">
+                <button class="btn btn-primary" data-action="export">Save export files</button>
+                <button class="btn" data-action="copy-ai"><svg><use href="#i-copy"/></svg>Copy for AI</button>
+                <button class="btn" data-action="goto-hardware">Browse hardware</button>
+                <button class="btn" data-action="goto-software">Browse software</button>
+              </div>
+              <p class="muted small" id="dash-meta"></p>
+            </div>
+            <div class="card">
+              <div class="card-head"><h3>Highlights</h3></div>
+              <ul class="highlights" id="dash-highlights"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Hardware / Software ─────────────────────── -->
+      <section class="page" id="page-hardware">
+        <div class="toolbar"><input type="search" id="hw-search" placeholder="Filter hardware…" /><span class="muted small" id="hw-count"></span></div>
+        <div class="sections" id="hw-sections"><p class="muted">Run a scan to see hardware.</p></div>
+      </section>
+      <section class="page" id="page-software">
+        <div class="toolbar"><input type="search" id="sw-search" placeholder="Filter software…" /><span class="muted small" id="sw-count"></span></div>
+        <div class="sections" id="sw-sections"><p class="muted">Run a scan to see software.</p></div>
+      </section>
+
+      <!-- ── Live ────────────────────────────────────── -->
+      <section class="page" id="page-live">
+        <div class="toolbar">
+          <button id="live-toggle" class="btn btn-primary">Start monitoring</button>
+          <span class="muted small" id="live-status">Not running</span>
+          <div class="spacer"></div>
+          <button id="live-export" class="btn" disabled>Export samples (CSV)</button>
+          <button id="live-clear" class="btn" disabled>Clear</button>
+        </div>
+        <div class="gauge-grid">
+          <div class="card gauge"><div class="gauge-label">CPU load</div><div class="gauge-value" id="g-cpu">–</div><div class="gauge-sub" id="g-cpu-sub"></div><canvas id="c-cpu" height="60"></canvas></div>
+          <div class="card gauge"><div class="gauge-label">CPU temperature</div><div class="gauge-value" id="g-temp">–</div><div class="gauge-sub" id="g-temp-sub">Needs admin on many boards</div><canvas id="c-temp" height="60"></canvas></div>
+          <div class="card gauge"><div class="gauge-label">Memory</div><div class="gauge-value" id="g-mem">–</div><div class="gauge-sub" id="g-mem-sub"></div><canvas id="c-mem" height="60"></canvas></div>
+          <div class="card gauge"><div class="gauge-label">GPU</div><div class="gauge-value" id="g-gpu">–</div><div class="gauge-sub" id="g-gpu-sub">Load/temp available on NVIDIA GPUs</div><canvas id="c-gpu" height="60"></canvas></div>
+          <div class="card gauge"><div class="gauge-label">Disk activity</div><div class="gauge-value" id="g-disk">–</div><div class="gauge-sub" id="g-disk-sub"></div><canvas id="c-disk" height="60"></canvas></div>
+          <div class="card gauge"><div class="gauge-label">Network</div><div class="gauge-value" id="g-net">–</div><div class="gauge-sub" id="g-net-sub"></div><canvas id="c-net" height="60"></canvas></div>
+        </div>
+        <div class="card"><div class="card-head"><h3>Per-core load</h3></div><div class="cores" id="cores"></div></div>
+        <div class="card"><div class="card-head"><h3>Volumes</h3></div><div class="volumes" id="live-volumes"></div></div>
+      </section>
+
+      <!-- ── Benchmark ───────────────────────────────── -->
+      <section class="page" id="page-bench">
+        <div class="card">
+          <div class="card-head"><h3>Run a benchmark</h3></div>
+          <p class="muted">Scores are SpecForge-relative: compare machines scanned with SpecForge, not with other benchmark tools. Close other programs for a fair run. CPU tests take ~10 seconds by default.</p>
+          <div class="row wrap">
+            <label class="check"><input type="checkbox" id="b-cpu" checked /> CPU (single + multi-thread)</label>
+            <label class="check"><input type="checkbox" id="b-mem" checked /> Memory bandwidth</label>
+            <label class="check"><input type="checkbox" id="b-disk" checked /> Disk sequential read/write</label>
+          </div>
+          <div class="row">
+            <button id="bench-run" class="btn btn-primary">Run benchmark</button>
+            <button id="bench-export" class="btn" disabled>Export results</button>
+            <span class="muted small" id="bench-status"></span>
+          </div>
+          <div id="bench-progress" class="progress hidden"><div class="progress-bar"><div id="bench-bar" style="width:0%"></div></div><div id="bench-label" class="progress-label"></div></div>
+        </div>
+        <div class="bench-grid" id="bench-results"></div>
+      </section>
+
+      <!-- ── Export ──────────────────────────────────── -->
+      <section class="page" id="page-export">
+        <div class="export-grid">
+          <div class="card">
+            <div class="card-head"><h3>What to export</h3></div>
+            <div class="form">
+              <div class="form-row"><span>Formats</span><div class="row">
+                <label class="check"><input type="checkbox" id="x-csv" /> CSV</label>
+                <label class="check"><input type="checkbox" id="x-json" /> JSON</label>
+                <label class="check"><input type="checkbox" id="x-txt" /> Text</label></div></div>
+              <div class="form-row"><span>CSV layout</span><div class="seg">
+                <button data-seg="csvLayout" data-val="tall" class="seg-btn">Tall (one line per field)</button>
+                <button data-seg="csvLayout" data-val="wide" class="seg-btn">Wide (one row per item)</button></div></div>
+              <div class="form-row"><span>AI prompt</span><label class="check"><input type="checkbox" id="x-ai" /> Prepend a "write me a listing" prompt to text and CSV exports</label></div>
+              <div class="form-row"><span>Programs</span><label class="check"><input type="checkbox" id="x-programs" /> Include the installed-programs list</label></div>
+              <div class="form-row"><span>Private data</span><div><span id="x-sensitive" class="pill"></span> <button class="link" data-action="goto-settings">Change in Settings</button></div></div>
+              <div class="form-row"><span>Save to</span><div><span id="x-dir" class="mono small"></span> <button class="link" data-action="goto-settings">Change</button></div></div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-primary" data-action="export">Save export files</button>
+              <button class="btn" data-action="copy-ai"><svg><use href="#i-copy"/></svg>Copy text to clipboard</button>
+            </div>
+            <p class="muted small" id="export-result"></p>
+          </div>
+          <div class="card">
+            <div class="card-head"><h3>Preview</h3><span class="muted small">Text export, exactly what gets copied</span></div>
+            <textarea id="export-preview" readonly spellcheck="false" placeholder="Run a scan first."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── History ─────────────────────────────────── -->
+      <section class="page" id="page-history">
+        <p class="muted">Every scan is kept locally on this PC. Open one to browse or export it again.</p>
+        <div class="history" id="history-list"></div>
+      </section>
+
+      <!-- ── Settings ────────────────────────────────── -->
+      <section class="page" id="page-settings">
+        <div class="card">
+          <div class="card-head"><h3>Appearance</h3></div>
+          <div class="form-row"><span>Theme</span><div class="seg">
+            <button data-seg="theme" data-val="dark" class="seg-btn">Dark</button>
+            <button data-seg="theme" data-val="light" class="seg-btn">Light</button></div></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Privacy</h3></div>
+          <p class="muted">Serial numbers, the Windows product key, MAC and IP addresses, hostname and user name are collected but <b>never exported</b> unless you switch this on. Keep it off for anything you'll post publicly.</p>
+          <div class="form-row"><span>Private data in exports</span><div class="seg">
+            <button data-seg="includeSensitive" data-val="false" class="seg-btn">Exclude (safe for listings)</button>
+            <button data-seg="includeSensitive" data-val="true" class="seg-btn seg-danger">Include (audit only)</button></div></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Scanning &amp; export defaults</h3></div>
+          <div class="form-row"><span>Installed programs</span><label class="check"><input type="checkbox" id="s-programs" /> Collect and export the installed-programs list (slower scan)</label></div>
+          <div class="form-row"><span>Export folder</span><div class="row"><span id="s-dir" class="mono small"></span><button class="btn btn-sm" id="s-dir-pick">Choose…</button><button class="btn btn-sm" id="s-dir-clear">Ask every time</button></div></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Benchmark</h3></div>
+          <div class="form-row"><span>CPU test length</span><div class="row"><input type="number" id="s-bench-cpu" min="2" max="60" step="1" class="num" /> <span class="muted small">seconds per test</span></div></div>
+          <div class="form-row"><span>Disk test size</span><div class="row"><input type="number" id="s-bench-disk" min="64" max="4096" step="64" class="num" /> <span class="muted small">MB written then read</span></div></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Updates</h3></div>
+          <div class="form-row"><span>Automatic updates</span><label class="check"><input type="checkbox" id="s-autoupdate" /> Check GitHub Releases on launch and install updates silently on the next restart</label></div>
+        </div>
+      </section>
+
+      <!-- ── About ───────────────────────────────────── -->
+      <section class="page" id="page-about">
+        <div class="about">
+          <img src="../../assets/icon.png" alt="" />
+          <h2>SpecForge</h2>
+          <p class="tagline">Forge a spec sheet from any PC.</p>
+          <p class="muted">Version <span id="about-version"></span> · Electron <span id="about-electron"></span> · Chromium <span id="about-chrome"></span></p>
+          <p>SpecForge reads a Windows PC's hardware and software, shows it in one place, and exports it as CSV, JSON or plain text — ready to paste into an AI assistant for an instant marketplace listing, or to keep as an audit record. Everything stays on this machine; nothing is uploaded.</p>
+          <div class="actions center">
+            <button class="btn btn-primary" id="about-update">Check for updates</button>
+            <button class="btn" data-link="https://github.com/AxialForge/SpecForge">GitHub</button>
+            <button class="btn" data-link="https://github.com/AxialForge/SpecForge/releases">Releases</button>
+            <button class="btn" data-link="https://github.com/AxialForge/SpecForge/issues">Report a problem</button>
+          </div>
+          <p id="about-update-status" class="update-status muted"></p>
+          <p class="muted small">Made by AxialForge · MIT licence · Built with Electron and systeminformation.<br/>Data folder: <span id="about-userdata" class="mono"></span></p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- warning modal for the privacy toggle -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <h3>Include private data in exports?</h3>
+      <p>Exports will then contain serial numbers, the Windows product key, MAC and IP addresses, and your computer and user names. <b>Anyone who receives the file can read them.</b> Only use this for your own audit records — never for a listing you post online.</p>
+      <div class="actions right">
+        <button class="btn" id="modal-cancel">Keep excluded</button>
+        <button class="btn btn-danger" id="modal-confirm">I understand, include it</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="app.js"></script>
+</body>
+</html>
