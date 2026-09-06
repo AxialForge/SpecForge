@@ -13,6 +13,10 @@ const bench = require("./bench");
 const updater = require("./updater");
 
 const isDev = process.argv.includes("--dev") || !app.isPackaged;
+// Keep a from-source run apart from an installed copy: separate settings and
+// history, and — crucially — a separate single-instance lock, so `npm run dev`
+// still opens while the installed app is running.
+if (!app.isPackaged) app.setPath("userData", app.getPath("userData") + "-dev");
 let win = null;
 let store = null;
 let isAdmin = false;

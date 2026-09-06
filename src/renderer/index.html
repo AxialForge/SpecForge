@@ -149,9 +149,10 @@
                 <label class="check"><input type="checkbox" id="x-csv" /> CSV</label>
                 <label class="check"><input type="checkbox" id="x-json" /> JSON</label>
                 <label class="check"><input type="checkbox" id="x-txt" /> Text</label></div></div>
-              <div class="form-row"><span>CSV layout</span><div class="seg">
-                <button data-seg="csvLayout" data-val="tall" class="seg-btn">Tall (one line per field)</button>
-                <button data-seg="csvLayout" data-val="wide" class="seg-btn">Wide (one row per item)</button></div></div>
+              <div class="form-row"><span>CSV layout</span><div><div class="seg">
+                <button data-seg="csvLayout" data-val="tall" class="seg-btn">Tall</button>
+                <button data-seg="csvLayout" data-val="wide" class="seg-btn">Wide</button></div>
+                <div class="muted small" style="margin-top:6px">Tall: one line per field (best for AI). Wide: one row per item (best for spreadsheets).</div></div></div>
               <div class="form-row"><span>AI prompt</span><label class="check"><input type="checkbox" id="x-ai" /> Prepend a "write me a listing" prompt to text and CSV exports</label></div>
               <div class="form-row"><span>Programs</span><label class="check"><input type="checkbox" id="x-programs" /> Include the installed-programs list</label></div>
               <div class="form-row"><span>Private data</span><div><span id="x-sensitive" class="pill"></span> <button class="link" data-action="goto-settings">Change in Settings</button></div></div>

@@ -1,7 +1,7 @@
 {
   "name": "specforge",
   "productName": "SpecForge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Scan a Windows PC's hardware and software and export the specs for AI-written marketplace listings or audits.",
   "main": "src/main/main.js",
   "author": "AxialForge",

@@ -163,7 +163,7 @@ function fieldOf(rOrItem, id, label) {
   return f ? String(f.value) + (f.unit ? ` ${f.unit}` : "") : null;
 }
 
-const TABLE_SECTIONS = new Set(["programs", "updates", "startup", "volumes", "peripherals"]);
+const TABLE_SECTIONS = new Set(["programs", "updates", "startup", "volumes", "audio", "usb", "printers"]);
 function renderSections(prefix, pick, filter = "") {
   const host = $(`#${prefix}-sections`);
   const r = state.report;
@@ -190,8 +190,10 @@ function renderItem(it) {
 function renderTable(items) {
   const cols = [];
   items.forEach((it) => it.fields.forEach((f) => !cols.includes(f.label) && cols.push(f.label)));
-  const rows = items.map((it) => `<tr>${cols.map((c) => `<td>${esc(fmt(it.fields.find((f) => f.label === c)))}</td>`).join("")}</tr>`).join("");
-  return `<table class="grid"><thead><tr>${cols.map((c) => `<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table>`;
+  // A column fewer than a third of the rows fill only makes the table wide.
+  const keep = cols.filter((c) => items.filter((it) => it.fields.some((f) => f.label === c)).length >= items.length / 3);
+  const rows = items.map((it) => `<tr>${keep.map((c) => `<td>${esc(fmt(it.fields.find((f) => f.label === c)))}</td>`).join("")}</tr>`).join("");
+  return `<div class="table-wrap"><table class="grid"><thead><tr>${keep.map((c) => `<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 function fmt(f) {
   if (!f) return "";

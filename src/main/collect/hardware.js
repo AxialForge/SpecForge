@@ -298,16 +298,16 @@ async function collectPeripherals() {
     safe(si.battery(), {}),
     safe(si.printer(), []),
   ]);
-  const items = [];
-  (audio || []).forEach((a) => items.push(I(`Audio: ${a.name}`, [F("Device", a.name), F("Manufacturer", a.manufacturer), F("Type", a.type), F("Default", M.yesNo(a.default)), F("Status", a.status)])));
+  const audioItems = (audio || []).map((a) => I(a.name, [F("Device", a.name), F("Manufacturer", a.manufacturer), F("Type", a.type), F("Default", M.yesNo(a.default)), F("Status", a.status)]));
   const seen = new Set();
+  const usbItems = [];
   (usb || []).forEach((u) => {
     const key = `${u.name}|${u.type}`;
     if (!u.name || seen.has(key)) return;
     seen.add(key);
-    items.push(I(`USB: ${u.name}`, [F("Device", u.name), F("Type", u.type), F("Vendor", u.vendor || u.manufacturer)]));
+    usbItems.push(I(u.name, [F("Device", u.name), F("Type", u.type), F("Vendor", u.vendor || u.manufacturer)]));
   });
-  (printers || []).forEach((p) => items.push(I(`Printer: ${p.name}`, [F("Name", p.name), F("Model", p.model), F("Default", M.yesNo(p.default)), F("Status", p.status)])));
+  const printerItems = (printers || []).map((p) => I(p.name, [F("Printer", p.name), F("Model", p.model), F("Default", M.yesNo(p.default)), F("Status", p.status)]));
   const bat = battery || {};
   const batItem = bat.hasBattery
     ? I("Battery", [
@@ -322,7 +322,7 @@ async function collectPeripherals() {
         F("Serial", bat.serial, { sensitive: true }),
       ])
     : null;
-  return [S("battery", "Battery", "battery", batItem ? [batItem] : []), S("peripherals", "Audio, USB & peripherals", "usb", items)];
+  return [S("battery", "Battery", "battery", batItem ? [batItem] : []), S("audio", "Audio devices", "audio", audioItems), S("usb", "USB devices", "usb", usbItems), S("printers", "Printers", "printer", printerItems)];
 }
 
 /** Run every hardware collector in parallel; report progress by section. */

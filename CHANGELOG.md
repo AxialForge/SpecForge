@@ -6,6 +6,19 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-09-06
+
+### Fixed
+
+- Audio, USB and printer devices are separate tables instead of one sparse
+  peripherals table; near-empty table columns are dropped and wide tables
+  scroll instead of squeezing.
+- Spacing on the dashboard action cards, benchmark controls, and the CSV
+  layout toggle at narrower window widths.
+- JSON export no longer carries the hostname when private data is excluded.
+- Running from source no longer conflicts with an installed copy (separate
+  data folder and single-instance lock).
+
 ## [0.1.0] - 2026-09-06
 
 ### Added
