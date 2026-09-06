@@ -76,21 +76,46 @@
         <a class="secondary" href="https://github.com/AxialForge/SpecForge">Source on GitHub</a>
       </p>
 
+      <p>
+        SpecForge reads a Windows PC's hardware and software, shows it on one
+        dashboard, and exports it as CSV, JSON or plain text. Paste the export
+        into ChatGPT, Claude or Gemini and it can write your eBay or marketplace
+        listing for you, or keep the file as an audit record of exactly what the
+        machine contained on that date. Nothing is uploaded anywhere.
+      </p>
+
+      <img src="screenshots/dashboard.png" alt="SpecForge dashboard" style="width:100%;border-radius:12px;border:1px solid var(--border);margin:1rem 0" />
+
       <h2>What it does</h2>
       <ul>
-        <li><!-- feature --></li>
-        <li><!-- feature --></li>
+        <li>Full hardware scan: CPU, every RAM module, GPUs, displays (native resolution), drives with health, volumes, network, battery, USB, audio, TPM and Secure Boot.</li>
+        <li>Software scan: Windows edition/version/activation, security status, installed programs, recent updates, startup programs.</li>
+        <li>Export as tall or wide CSV, JSON and text, with an optional "write me a listing" prompt, or copy straight to the clipboard.</li>
+        <li>Private data (serials, product key, MAC/IP, hostname, user) is excluded from exports unless you switch it on for an audit.</li>
+        <li>Live monitor and benchmark tabs, each with their own export, so a listing can say how the machine actually runs.</li>
+        <li>Scan history, dark and light themes, silent updates from GitHub Releases.</li>
       </ul>
+
+      <h2>Screenshots</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem">
+        <img src="screenshots/hardware.png" alt="Hardware page" style="width:100%;border-radius:10px;border:1px solid var(--border)" />
+        <img src="screenshots/software.png" alt="Software page" style="width:100%;border-radius:10px;border:1px solid var(--border)" />
+        <img src="screenshots/live-monitor.png" alt="Live monitor" style="width:100%;border-radius:10px;border:1px solid var(--border)" />
+        <img src="screenshots/benchmark.png" alt="Benchmark" style="width:100%;border-radius:10px;border:1px solid var(--border)" />
+        <img src="screenshots/export.png" alt="Export page" style="width:100%;border-radius:10px;border:1px solid var(--border)" />
+        <img src="screenshots/settings.png" alt="Settings" style="width:100%;border-radius:10px;border:1px solid var(--border)" />
+      </div>
 
       <h2>Requirements</h2>
       <ul>
-        <li><!-- runtime / OS --></li>
+        <li>Windows 11 (Windows 10 untested, planned). No admin needed; a one-click "Relaunch as admin" unlocks drive health, TPM and Secure Boot.</li>
       </ul>
 
       <h2>Build it yourself</h2>
       <pre><code>git clone https://github.com/AxialForge/SpecForge.git
 cd SpecForge
-# install + build</code></pre>
+npm install
+npm run dist</code></pre>
 
       <footer>
         MIT licensed &middot; built by

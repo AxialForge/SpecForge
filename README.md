@@ -12,6 +12,35 @@ It deliberately isn't a monitoring suite or an overclocking tool. The live
 monitor and benchmark tabs exist so a listing can say "runs cool, scores X",
 not to replace HWiNFO or Cinebench.
 
+![SpecForge dashboard](docs/screenshots/dashboard.png)
+
+## Screenshots
+
+| Hardware | Software |
+| --- | --- |
+| ![Hardware](docs/screenshots/hardware.png) | ![Software](docs/screenshots/software.png) |
+
+| Live monitor | Benchmark |
+| --- | --- |
+| ![Live monitor](docs/screenshots/live-monitor.png) | ![Benchmark](docs/screenshots/benchmark.png) |
+
+| Export | Settings |
+| --- | --- |
+| ![Export](docs/screenshots/export.png) | ![Settings](docs/screenshots/settings.png) |
+
+## How to use it
+
+1. Click **Scan this PC**. About 15 seconds later the dashboard fills in.
+2. Browse the **Hardware** and **Software** pages, or type in the filter box.
+3. On **Export**, tick the formats you want and click **Save export files**, or
+   **Copy text to clipboard** and paste it into an AI assistant. With the AI
+   prompt option on, the text starts with instructions asking for a title,
+   description, spec bullets and a price range.
+4. Optionally run the **Live monitor** for a minute or the **Benchmark** and
+   export those too.
+
+Every scan is kept under **History** so you can reopen or re-export it later.
+
 ## What it collects
 
 - **System** – manufacturer, model, form factor, serial, UUID
